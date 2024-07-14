@@ -16,6 +16,8 @@
     color: white;
     margin: 50px;
     font-size: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 40px;
   }
   &__fond {
     z-index: 0;

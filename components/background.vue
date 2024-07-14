@@ -41,18 +41,22 @@ defineProps({
 .out-top {
   animation: rotate 20s linear infinite;
   transform-origin: 13px 25px;
+  transition: 2s;
 }
 .in-top {
   animation: rotate 10s linear infinite;
   transform-origin: 13px 25px;
+  transition: 2s;
 }
 .out-bottom {
   animation: rotate 25s linear infinite;
   transform-origin: 84px 93px;
+  transition: 2s;
 }
 .in-bottom {
   animation: rotate 15s linear infinite;
   transform-origin: 84px 93px;
+  transition: 2s;
 }
 
 body {
