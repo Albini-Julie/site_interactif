@@ -16,7 +16,7 @@
         <Ball class="ball" color="#8438FF" />
       </label>
       <label class="card" for="item-3" id="song-3" @click="Select(3)">
-        <Ball class="ball" color="#EBFF00" />
+        <Ball class="ball" color="#FF7A00" />
       </label>
       <label class="card" for="item-4" id="song-4" @click="Select(4)">
         <Ball class="ball" color="#FF0000" />
@@ -40,7 +40,7 @@ function Select(number) {
   } else if (number == 2) {
     selectcolor.value = "#8438FF";
   } else if (number == 3) {
-    selectcolor.value = "#EBFF00";
+    selectcolor.value = "#FF7A00";
   } else if (number == 4) {
     selectcolor.value = "#FF0000";
   } else if (number == 5) {

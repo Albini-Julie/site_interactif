@@ -77,11 +77,6 @@
   );
 }
 
-//.ball:hover {
-//  -webkit-animation: bubble-anim 2s ease-out;
-//  animation: bubble-anim 2s ease-out 60s;
-//}
-
 .ball.bubble:before {
   -webkit-filter: blur(0);
   filter: blur(0);
