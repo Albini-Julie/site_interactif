@@ -7,12 +7,10 @@
 <style lang="scss">
 .ball {
   display: block;
-  background: black;
   border-radius: 50%;
   height: 300px;
   width: 300px;
   margin: 0;
-  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
   transition: transform 2s;
 }
 
@@ -24,7 +22,11 @@
   width: 90%;
   height: 90%;
   border-radius: 100%;
-  background: radial-gradient(circle at top, white, rgba(255, 255, 255, 0) 58%);
+  background: radial-gradient(
+    circle at top,
+    v-bind(color),
+    rgba(255, 255, 255, 0) 58%
+  );
   -webkit-filter: blur(5px);
   filter: blur(5px);
   z-index: 2;
@@ -68,16 +70,18 @@
 .ball.bubble {
   background: radial-gradient(
     circle at 50% 55%,
-    rgba(240, 245, 255, 0.9),
-    rgba(240, 245, 255, 0.9) 40%,
-    rgba(225, 238, 255, 0.8) 60%,
-    rgba(43, 130, 255, 0.4)
+    v-bind(color) 10%,
+    v-bind(color) 20%,
+    v-bind(color) 40%,
+    rgb(0, 0, 0) 200%
   );
 }
-.ball:hover {
-  -webkit-animation: bubble-anim 2s ease-out infinite;
-  animation: bubble-anim 2s ease-out infinite;
-}
+
+//.ball:hover {
+//  -webkit-animation: bubble-anim 2s ease-out;
+//  animation: bubble-anim 2s ease-out 60s;
+//}
+
 .ball.bubble:before {
   -webkit-filter: blur(0);
   filter: blur(0);
@@ -102,8 +106,8 @@
     circle at 50% 80%,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 74%,
-    white 80%,
-    white 84%,
+    rgb(255, 255, 255) 80%,
+    rgb(255, 255, 255) 84%,
     rgba(255, 255, 255, 0) 100%
   );
 }
@@ -192,4 +196,8 @@
 }
 </style>
 
-<script setup></script>
+<script setup>
+defineProps({
+  color: String,
+});
+</script>
