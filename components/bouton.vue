@@ -1,6 +1,6 @@
 <template>
   <div class="bouton">
-    <p class="bouton__text">Choisir cette couleur</p>
+    <p class="bouton__text">{{ text }}</p>
   </div>
 </template>
 
@@ -8,6 +8,7 @@
 .bouton {
   background: v-bind(color);
   padding: 10px 40px;
+  min-width: 200px;
   box-shadow: 10px 10px 5px #ffffff;
   cursor: pointer;
   color: #ffffff;
@@ -15,7 +16,8 @@
 
   &__text {
     font-family: Alfa;
-    font-size: 30px;
+    font-size: 25px;
+    text-align: center;
   }
 }
 
@@ -40,5 +42,6 @@
 <script setup>
 defineProps({
   color: String,
+  text: String,
 });
 </script>
