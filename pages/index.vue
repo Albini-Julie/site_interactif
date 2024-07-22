@@ -21,6 +21,8 @@
       text="Choisir cette couleur"
     />
   </div>
+
+  <BlocRecherche />
 </template>
 
 <style lang="scss">
