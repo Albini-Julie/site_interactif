@@ -2,7 +2,7 @@
   <svg
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style="width: 100px; height: 100px; position: relative"
+    style="width: 100px; height: 100px; position: relative; transition: 2s"
     preserveAspectRatio="none"
   >
     <path
