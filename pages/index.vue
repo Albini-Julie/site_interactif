@@ -1,6 +1,11 @@
 <template>
-  <Background class="index__fond" :color="finalcolor" />
-  <div class="index__content">
+  <Felicitation v-if="condition" />
+  <Background
+    class="index__fond"
+    :color="finalcolor"
+    v-if="condition == false"
+  />
+  <div class="index__content" v-if="condition == false">
     <h1
       ref="title"
       class="index__title"
@@ -21,8 +26,7 @@
       text="Choisir cette couleur"
     />
   </div>
-
-  <BlocRecherche />
+  <BlocRecherche v-if="condition == false" />
 </template>
 
 <style lang="scss">
@@ -75,7 +79,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { selectcolor, finalcolor } from "../config";
+import { selectcolor, finalcolor, condition } from "../config";
 
 function SelectColor() {
   finalcolor.value = selectcolor.value;
@@ -83,13 +87,13 @@ function SelectColor() {
 }
 
 var className = ref("animation");
-var condition = ref(true);
+var test = ref(true);
 var styleObject = ref({});
 
 const title = ref(null);
 
 function Animation() {
-  if (condition.value) {
+  if (test.value) {
     const computedStyle = window.getComputedStyle(title.value);
     const marginLeft = computedStyle.marginLeft;
     styleObject.value = {
@@ -101,6 +105,6 @@ function Animation() {
     styleObject.value = {};
     className.value = "animation";
   }
-  condition.value = !condition.value;
+  test.value = !test.value;
 }
 </script>

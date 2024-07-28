@@ -54,7 +54,7 @@ function updateNumber(action) {
     number3.value == "9" &&
     number4.value == "6"
   ) {
-    console.log("Gagné !");
+    condition.value = true;
   }
 }
 </script>
